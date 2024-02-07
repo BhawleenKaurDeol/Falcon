@@ -1,0 +1,233 @@
+
+            .options-menu .cls-1 {
+                font-family: IstokWeb-Regular, 'Istok Web';
+                font-size: 8px;
+                letter-spacing: -.01em;
+            }
+
+            .options-menu .cls-1,
+            .options-menu .cls-2,
+            .options-menu .cls-3,
+            .options-menu .cls-4,
+            .options-menu .cls-5,
+            .options-menu .cls-6,
+            .options-menu .cls-7,
+            .options-menu .cls-8,
+            .options-menu .cls-9,
+            .options-menu .cls-10,
+            .options-menu .cls-11 {
+                fill: #010000;
+            }
+
+            .options-menu .cls-2 {
+                letter-spacing: .01em;
+            }
+
+            .options-menu .cls-2,
+            .options-menu .cls-3,
+            .options-menu .cls-4,
+            .options-menu .cls-5,
+            .options-menu .cls-6,
+            .options-menu .cls-7,
+            .options-menu .cls-8,
+            .options-menu .cls-9,
+            .options-menu .cls-10,
+            .options-menu .cls-11 {
+                font-family: MyriadPro-Regular, 'Myriad Pro';
+                font-size: 8.25px;
+            }
+
+            .options-menu .cls-3 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-12 {
+                letter-spacing: .02em;
+            }
+
+            .options-menu .cls-4 {
+                letter-spacing: .01em;
+            }
+
+            .options-menu .cls-13,
+            .options-menu .cls-14,
+            .options-menu .cls-15,
+            .options-menu .cls-16,
+            .options-menu .cls-17,
+            .options-menu .cls-18,
+            .options-menu .cls-19,
+            .options-menu .cls-20,
+            .options-menu .cls-21,
+            .options-menu .cls-22 {
+                stroke-width: 0px;
+            }
+
+            .options-menu .cls-14,
+            .options-menu .cls-18,
+            .options-menu .cls-22 {
+                fill-rule: evenodd;
+            }
+
+            .options-menu .cls-14,
+            .options-menu .cls-21 {
+                fill: #575756;
+            }
+
+            .options-menu .cls-23 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-15 {
+                fill: #3c3c3b;
+            }
+
+            .options-menu .cls-16 {
+                fill: #dadada;
+            }
+
+            .options-menu .cls-17,
+            .options-menu .cls-18 {
+                fill: #fff;
+            }
+
+            .options-menu .cls-5 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-6 {
+                letter-spacing: .02em;
+            }
+
+            .options-menu .cls-24 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-19 {
+                fill: #414042;
+            }
+
+            .options-menu .cls-8 {
+                letter-spacing: .01em;
+            }
+
+            .options-menu .cls-20 {
+                opacity: .5;
+            }
+
+            .options-menu .cls-25,
+            .options-menu .cls-11 {
+                letter-spacing: .02em;
+            }
+
+            .options-menu .cls-9,
+            .options-menu .cls-26 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-27 {
+                letter-spacing: .04em;
+            }
+
+            .options-menu .cls-10 {
+                letter-spacing: 0em;
+            }
+
+            .options-menu .cls-28 {
+                letter-spacing: .02em;
+            }
+
+            .options-menu .cls-22 {
+                fill: #1d1d1b;
+            }
+            .options-menu .button-label:hover .cls-16{
+                fill: #fbb69a;
+            }
+
+            #floor .cls-1 {
+                fill: #91744a;
+            }
+            
+            #floor .cls-1,
+            #floor .cls-2,
+            #floor .cls-3,
+            #floor .cls-4 {
+                stroke-width: 0px;
+            }
+            
+            #floor .cls-5 {
+                fill: #13120d;
+                font-size: 9.3px;
+            }
+            
+            #floor .cls-5,
+            #floor .cls-6,
+            #floor .cls-7 {
+                font-family: MyriadPro-Regular, 'Myriad Pro';
+            }
+            
+            #floor .cls-2 {
+                fill: #f6f6f6;
+            }
+            
+            #floor .cls-8,
+            #floor .cls-9,
+            #floor .cls-10 {
+                fill: none;
+                stroke: #3c3c3b;
+            }
+            
+            #floor .cls-11 {
+                font-family: ArialMT, Arial;
+                font-size: 9.47px;
+            }
+            
+            #floor .cls-11,
+            #floor .cls-12,
+            #floor .cls-6,
+            #floor .cls-13 {
+                fill: #fff;
+            }
+            
+            #floor .cls-12 {
+                font-family: Arial-BoldMT, Arial;
+                font-size: 12.87px;
+                font-weight: 700;
+            }
+            
+            #floor .cls-6,
+            #floor .cls-13 {
+                font-size: 9.3px;
+            }
+            
+            #floor .cls-14 {
+                letter-spacing: -.05em;
+            }
+            
+            #floor .cls-3 {
+                fill: #c6c6c6;
+            }
+            
+            #floor .cls-13,
+            #floor .cls-15 {
+                font-family: TheSansOsF-Light, 'TheSansOsF Light';
+                font-weight: 300;
+            }
+            
+            #floor .cls-9 {
+                stroke-dasharray: 0 0 8 8;
+                stroke-miterlimit: 5;
+            }
+            
+            #floor .cls-4 {
+                fill: #9d9d9c;
+            }
+            
+            #floor .cls-10 {
+                stroke-miterlimit: 10;
+            }
+            
+            #floor .cls-15,
+            #floor .cls-7 {
+                fill: #3c3c3b;
+                font-size: 9.14px;
+            }
