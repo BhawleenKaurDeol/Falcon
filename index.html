@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cropper.js/cropper.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="cropper.js/cropper.js"></script>
+    <script defer src="script.js"></script>
+    <title>Image cropper</title>
+</head>
+<body>
+<div class="main-container">
+    <div class="camera">
+        <video id="video">Video stream not available.</video>
+    </div>
+    <div><button id="startbutton">Take photo</button></div>
+    <canvas id="canvas"></canvas>
+     <div class="camera-output">
+        <img class="image" alt="The screen capture will appear in this box.">
+    </div> 
+
+
+
+
+    <div class="img-container">
+        <img id="image-to-crop" src="" alt="Captured image will appear here...">
+    </div>
+        <label for="fileInput">Choose an image file:</label>
+        <input type="file" id="file-input" accept="image/*">
+        <button id="btn-crop">Crop</button>
+        <div class="cropped-img">
+            <img src="" id="output" alt="cropped image">
+        </div>
+
+
+
+        
+    </div>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cropper.js/cropper.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="cropper.js/cropper.js"></script>
+    <script defer src="script.js"></script>
+    <title>Image Cropper</title>
+</head>
+<body>
+<div class="main-container">
+    <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+    </div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    
+    <div class="img-container" style="display: none;">
+        <img id="image-to-crop" src="" class="crop-target" alt="Captured image will appear here...">
+    </div>
+        <input type="file" id="file-input" accept="image/*">
+        <button id="btn-crop">Crop</button>
+    <div class="cropped-img">
+        <img src="" id="output" alt="cropped image">
+    </div>
+</div>
+
+</body>
+</html>
