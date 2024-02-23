@@ -12,7 +12,7 @@ include "includes/application_top.php";
     <title>Falcon APP - PROFILE</title>
     <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/Signup.css">
     <link rel="icon" type="image/png" href="images/falcon-icon.png">
     
 </head>
@@ -20,47 +20,23 @@ include "includes/application_top.php";
     <?php 
     include "header.php";
     ?>
-    <main id="main_content">
-        <nav class="top-navbar mobile-navbar">
-            <ul>
-                <li><a href="index.php"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="fa-sr-only">Back button</span></a></li>
-                <li><p>Profile</p></li>
-                <li><a href="#"><i class="fa-solid fa-ellipsis" aria-hidden="true"></i><span class="fa-sr-only">options</span></a></li>
-            </ul>
-        </nav>
-
-        <nav class="top-navbar desktop-navbar">
-            <ul>
-                <li><a href="index.php"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="fa-sr-only">Back button</span></a></li>
-                <li><p>Profile</p></li>
-                <li><a href="#"><i class="fa-solid fa-ellipsis" aria-hidden="true"></i><span class="fa-sr-only">options</span></a></li>
-            </ul>
-        </nav>
-
-        <section class="main-content">
-            <section class="user-card">
-            <p><i class="fa-solid fa-user"></i><span class="fa-sr-only">My Profile</span></p>
-            <p>My Profile</p>
-            </section>
-
-            <section class="Id-card">
-            <p><i class="fa-solid fa-id-card"></i><span class="fa-sr-only">Mu Id</span></p>
-            <p>My Id</p>
-            </section>
-        </section>
-
-        
+    <main id="main-content">
+        <form action="">
+            <div class="profile_image"><a href="image.php"><img src="images/placeholder-face.jpg" alt=""></a></div>
+            <label for="student-id"><p>Student ID</p><input type="text" name="student-id"></label>
+            <label for="emailid"><p>Email</p><input type="emai" name="emailid"></label>
+            <label for="password-field" class="password-field"><p>Password</p><input type="password" name="password-field" ></label>
+            <label for="password-field2"><p>Confirm password</p><input type="password" name="password-field2"></label><br>
+            <button type="submit">Confirm</button>
+        </form>
+        <div class="login">
+            <p>Already have an accout?</p>
+            <a href="#">Log in <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
     </main>
-    <footer>
-        <ul>
-            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-        </ul>
-    </footer>
+
 <?php
 include "footer.php";
-?> 
+?>
 </body>
 </html>

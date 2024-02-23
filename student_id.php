@@ -86,7 +86,7 @@ if (isset($_GET['id'])) {
         </svg>
         <svg id="id_reverse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 614.35 364.79">
           <rect  y="252.96" width="614.35" height="111.83" />
-          <image width="256" height="256" transform="translate(54.17 40) scale(.75)" xlink:href="vendors/phpqr/qrcode-display.php?data=<?=urlencode(FULL_PATH)?>?id=<?=$_GET['id']?>&w=191&h=191&q=50" />
+          <image width="256" height="256" transform="translate(54.17 40) scale(.75)" xlink:href="vendors/phpqr/qrcode-display.php?data=<?=urlencode(FULL_PATH)?>student_id.php?id=<?=$_GET['id']?>&w=191&h=191&q=50" />
           <image width="400" height="80" transform="translate(94.3 268.87)" xlink:href="vendors/phpbarcode/barcode-gd.php?code=<?= $type_user == 'Student' ? $student_id : $staff_id ?>" /><text class="cls-5" transform="translate(91.85 25)">
             <tspan class="cls-4" x="0" y="0">Verify virtual ID</tspan>
           </text>

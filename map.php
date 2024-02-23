@@ -11,8 +11,8 @@ $total = mysqli_num_rows($map_query);
 if ($total > 0) {
 
   while ($campus = tep_db_fetch_array($map_query)) {
-    $id_building = $campus['id_campus'];
-    $name_building = $campus['name_campus'];
+    $id_campus = $campus['id_campus'];
+    $name_campus = $campus['name_campus'];
     $map = $campus['map_campus'];
   }
 }
