@@ -16,6 +16,8 @@ include "includes/application_top.php";
     <title>Image Cropper</title>
     <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="images/falcon-icon.png">
+
+    <script src="profile.js" defer></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="falcon-body">
@@ -36,7 +38,8 @@ include "includes/application_top.php";
         <input type="file" id="file-input" accept="image/*">
         <button id="btn-crop">Crop</button>
     <div class="cropped-img">
-        <img src="" id="output" alt="cropped image">
+        <img src="" id="output" alt="cropped image" id="img">
+        <button id="submit" onclick="SetProfileImage()">Set Profile Image</button>
     </div>
 </div>
 </main>
