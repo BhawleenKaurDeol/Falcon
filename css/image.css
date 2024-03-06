@@ -1,0 +1,110 @@
+.image-body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    
+}
+img{
+    max-width: 100%;
+    height: auto;
+    }
+
+    #myModal{
+       
+        width: 50%;
+        height: 100%;
+        border: 2px solid rgb(230, 177, 140);
+        border-radius: 5%;
+        margin: 0 auto;
+        text-align: center;
+       
+    }
+
+    .modal-content{
+        display: grid;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    #cameraBtn, #uploadBtn{
+        background-color: #d54c15;
+        color: white;
+        padding: 5%;
+        font-size: large;
+    }
+
+    #startbutton, #btn-crop{
+        padding: 2%;
+        background-color: #d54c15;
+        color: white;
+        border: rgb(172, 132, 117);
+        font-size: large;
+        margin-left: 43%;
+        margin-top: 1rem;
+        
+    }
+
+
+    #save, #cancel{
+
+        margin-bottom: 1rem;
+        padding: 2%;
+        font-size: large;
+        border: 2px solid rgb(172, 132, 117);
+        border-radius: 5%;
+
+    }
+
+    #save{
+        background-color: #d54c15;
+        color: white;
+    }
+
+    #cancel{
+        background-color: white;
+        color: black;
+        
+    }
+
+    .save-cancel{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: 2rem;
+      
+    }
+
+
+    #main_content{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+    
+    input[type="file"] {
+        display: none;
+    }
+
+    .cropped-img {
+        width: 450px;
+        height: 500px;
+        overflow: hidden; /* Ensure that the container doesn't expand beyond the specified dimensions */
+    }
+
+    #output {
+        width: 100%; /* Make the image take up the full width of the container */
+        height: 100%; /* Make the image take up the full height of the container */
+        object-fit: cover; /* Ensure that the image maintains its aspect ratio while covering the container */
+    }
+    .img-container {
+        object-fit: cover;
+        width: 100%; 
+    }
+    
+    
+    
+    
+    
+    
+    
