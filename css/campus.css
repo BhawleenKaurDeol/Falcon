@@ -1,0 +1,493 @@
+
+#Campus .cls-1 {
+    fill: url(#Unnamed_Pattern);
+}
+
+#Campus .cls-1,
+#Campus .cls-2,
+#Campus .cls-3,
+#Campus .cls-4,
+#Campus .cls-5,
+#Campus .cls-6,
+#Campus .cls-7,
+#Campus .cls-8,
+#Campus .cls-9,
+#Campus .cls-10,
+#Campus .cls-11,
+#Campus .cls-12 {
+    stroke-width: 0px;
+}
+
+#Campus .cls-13 {
+    clip-path: url(#clippath-20);
+}
+
+#Campus .cls-14 {
+    clip-path: url(#clippath-11);
+}
+
+#Campus .cls-15 {
+    clip-path: url(#clippath-16);
+}
+
+#Campus .cls-2 {
+    fill: #879b69;
+}
+
+#Campus .cls-3 {
+    fill: #808285;
+}
+
+#Campus .cls-16 {
+    clip-path: url(#clippath-2);
+}
+
+#Campus .cls-4,
+#Campus .cls-8 {
+    fill-rule: evenodd;
+}
+
+#Campus .cls-17 {
+    clip-path: url(#clippath-13);
+}
+
+#Campus .cls-18 {
+    opacity: .05;
+}
+
+#Campus .cls-19 {
+    clip-path: url(#clippath-15);
+}
+
+#Campus .cls-20 {
+    clip-path: url(#clippath-6);
+}
+
+#Campus .cls-6,
+#Campus .cls-21 {
+    fill: none;
+}
+
+#Campus .cls-22 {
+    clip-path: url(#clippath-7);
+}
+
+#Campus .cls-23 {
+    clip-path: url(#clippath-21);
+}
+
+#Campus .cls-24 {
+    clip-path: url(#clippath-1);
+}
+
+#Campus .cls-25 {
+    clip-path: url(#clippath-4);
+}
+
+#Campus .cls-26 {
+    clip-path: url(#clippath-12);
+}
+
+#Campus .cls-7,
+#Campus .cls-8 {
+    fill: #fff;
+}
+
+#Campus .cls-27 {
+    clip-path: url(#clippath-22);
+}
+
+#Campus .cls-28 {
+    clip-path: url(#clippath-9);
+}
+
+#Campus .cls-29,
+#Campus .cls-12 {
+    opacity: .1;
+}
+
+#Campus .cls-30 {
+    clip-path: url(#clippath);
+}
+
+#Campus .cls-9 {
+    fill: #dbe8c4;
+}
+
+#Campus .cls-10 {
+    fill: #414042;
+}
+
+#Campus .cls-31 {
+    clip-path: url(#clippath-19);
+}
+
+#Campus .cls-11 {
+    fill: #ebf2df;
+}
+
+#Campus .cls-32 {
+    clip-path: url(#clippath-3);
+}
+
+#Campus .cls-33 {
+    clip-path: url(#clippath-8);
+}
+
+#Campus .cls-21 {
+    stroke: #000;
+    stroke-width: 3.6px;
+}
+
+#Campus .cls-34 {
+    clip-path: url(#clippath-18);
+}
+
+#Campus .cls-35 {
+    clip-path: url(#clippath-14);
+}
+
+#Campus .cls-36 {
+    clip-path: url(#clippath-17);
+}
+
+#Campus .cls-37 {
+    clip-path: url(#clippath-5);
+}
+
+#Campus .cls-38 {
+    opacity: .1;
+}
+
+#Campus .cls-39 {
+    clip-path: url(#clippath-10);
+}
+
+#Campus .cls-40 {
+    clip-path: url(#clippath-23);
+}
+
+
+
+
+
+#Campus #a-building:hover #a-floor,
+#Campus #b-building:hover #b-floor,
+#Campus #c-building:hover #c-floor,
+#Campus #d-building:hover #d-floor,
+#Campus #g-building:hover #g-floor,
+#Campus #l-building:hover #l-floor,
+#Campus #s-building:hover #s-floor,
+#Campus #m1-building:hover #m1-floor,
+#Campus #m2-building:hover #m2-floor,
+#Campus #m3-building:hover #m3-floor,
+#Campus #t-building:hover #t-floor {
+
+    fill: orangered
+}
+
+#Campus #a-building,
+#Campus #b-building,
+#Campus #c-building,
+#Campus #d-building,
+#Campus #g-building,
+#Campus #l-building,
+#Campus #s-building,
+#Campus #m1-building,
+#Campus #m2-building,
+#Campus #m3-building,
+#Campus #t-building {
+    cursor: pointer;
+}
+
+
+.options-menu .cls-1 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-2 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-3 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-4 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-5 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-6 {
+    letter-spacing: .04em;
+}
+
+.options-menu .cls-7 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-8 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-9 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-10 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-11 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-12 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-13 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-14,
+.options-menu .cls-15,
+.options-menu .cls-16,
+.options-menu .cls-17,
+.options-menu .cls-18 {
+    stroke-width: 0px;
+}
+
+.options-menu .cls-19 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-20 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-21 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-22 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-23 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-24 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-25 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-26 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-27 {
+    letter-spacing: .04em;
+}
+
+.options-menu .cls-28 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-29 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-30 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-31 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-32 {
+    letter-spacing: .04em;
+}
+
+.options-menu .cls-33 {
+    letter-spacing: -.01em;
+}
+
+.options-menu .cls-34 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-35 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-15 {
+    fill: #dadada;
+}
+
+.options-menu .cls-36 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-37 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-38 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-39 {
+    font-family: IstokWeb-Regular, 'Istok Web';
+    font-size: 8px;
+}
+
+.options-menu .cls-39,
+.options-menu .cls-40 {
+    fill: #010000;
+}
+
+.options-menu .cls-16 {
+    fill: #fff;
+}
+
+.options-menu .cls-41 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-42 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-43 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-44 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-45 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-46 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-47 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-48 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-49 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-40 {
+    font-family: MyriadPro-Regular, 'Myriad Pro';
+    font-size: 8.25px;
+}
+
+.options-menu .cls-50 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-51 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-17 {
+    fill: #414042;
+}
+
+.options-menu .cls-52 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-18 {
+    opacity: .5;
+}
+
+.options-menu .cls-53 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-54 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-55 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-56 {
+    letter-spacing: .04em;
+}
+
+.options-menu .cls-57 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-58 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-59 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-60 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-61 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-62 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-63 {
+    letter-spacing: .03em;
+}
+
+.options-menu .cls-64 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-65 {
+    letter-spacing: .02em;
+}
+
+.options-menu .cls-66 {
+    letter-spacing: .01em;
+}
+
+.options-menu .cls-67 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-68 {
+    letter-spacing: 0em;
+}
+
+.options-menu .cls-69 {
+    letter-spacing: 0em;
+}
+
+.options-menu .button-label:hover .cls-15{
+    fill: #fbb69a;
+}

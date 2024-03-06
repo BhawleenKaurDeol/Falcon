@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: candara;
+    src: url(../fonts/Candara.ttf);
+}
+
+@font-face {
+    font-family: Candara-Bold;
+    src: url(../fonts/Candarab.ttf);
+}
+
+@font-face {
+    font-family: "Times New Roman";
+    src: url(../fonts/times.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+
+.falcon-body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.falcon-body header {
+    height: 70px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.falcon-body footer {
+    height: 60px;
+    border-top: grey solid 1px;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+}
+
+.falcon-body main {
+    height: calc(100% - 130px);
+}
+
+
+
+.main-menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu li a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-right: grey 1px solid;
+}
+
+.main-menu li:last-of-type a {
+    border-right: none;
+}
+
+.main-menu li a:hover,
+.main-menu li a.active:hover {
+    background-color: #d54c15;
+    color: white;
+}
+
+.main-menu li a.active {
+    background-color: #fbb69a;
+    color: black;
+}
+
+.falcon-body .app-logo {
+    max-height: 60px;
+    width: auto;
+}
+
+#main_content {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+/* MAP BUILDING========================== */
+
+
+.building-header {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+
+}
+
+.level-selector {
+    position: absolute;
+    right: 20px;
+    z-index: 1000;
+    top: 110px
+}
+
+.btn {
+    margin: 15px;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: orangered;
+    color: white;
+
+}
+
+.btn-grid {
+    height: 100%;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: orange;
+}
+
+#b018 {
+    cursor: pointer;
+}
+
+#b014 {
+    cursor: pointer;
+}
+
+#b018 path:hover,
+#b018 polygon:hover {
+    fill: green;
+}
+
+#b014 path:hover,
+#b014 polygon:hover {
+    fill: green;
+}
+
+.room table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.room th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.room th {
+    background-color: #f2f2f2;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#Campus,
+#building {
+    cursor: grab;
+}
+
+
+
+
+#mobile-div {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+#button-menu .orange-fill {
+    fill: grey;
+}
+#button-menu.active .orange-fill {
+    fill: black;
+}
+#button-menu:hover .orange-fill {
+    fill: orangered;
+}
+
+.orange-fill,
+.white-fill {
+    stroke-width: 0px;
+}
+
+.white-fill {
+    fill: white;
+}
+.button-menu{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 70px;
+    left: 15px;
+    cursor: pointer;
+}
+
+
+.options-menu{
+    width: 250px;
+    position: absolute;
+    z-index: 100;
+    bottom: 118px;
+    left: 15px;
+}
+.label-map{
+    position: absolute;
+    z-index: 100;
+    bottom: 75px;
+    left: 77px;
+    font-size: 1rem;
+}
+.options-menu .button-label{
+    cursor: pointer;
+}
+
