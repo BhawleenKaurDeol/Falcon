@@ -83,6 +83,10 @@ include "includes/application_top.php";
         <input type="hidden" value="1" name="id_schedule"/>
 
                 <button type="button" onclick="addCourse()">Add Course</button>
+
+                <button type="button" 
+                id="view-schedule-button"
+                onclick="viewSchedule()">View Schedule</button>
               </form>
    
 
