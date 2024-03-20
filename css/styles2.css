@@ -1,0 +1,79 @@
+/* colors:- */
+:root{
+    --primary-color: #ED4C21;
+
+}
+
+
+h1{
+    font-family: Dosis;
+}
+
+.logo-section{
+    display: none;
+}
+
+
+.header-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+main{
+    margin: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+    .header-section{
+        grid-template-columns: 20% 60% 20%;
+        justify-content: space-evenly;
+        color: white;
+        background-color: var(--primary-color);
+    }
+    .app-logo{
+        height: auto;
+        width: 90%;
+    }
+    .logo{
+        margin: 1rem;
+        background-color: black;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    .logo-section{
+        display: flex;
+        align-items: center;
+    }
+    .mobile-header{
+        display: none;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .primary-nav{
+        justify-self: end;
+    }
+    .primary-nav ul{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        list-style-type: none;
+        grid-gap: 1rem;
+    }
+
+    a{
+        display: grid;
+        text-decoration: none;
+        color: white;
+        align-self: center;
+        justify-items: center;
+    }
+    .icon{
+        font-size: 1.5rem;
+    }
+    footer{
+        display: none;
+    }
+}

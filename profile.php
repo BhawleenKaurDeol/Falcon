@@ -14,6 +14,7 @@ include "includes/application_top.php";
     <!-- <script src="javascript/fetch.js" defer></script> -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Signup.css">
+    <link rel="stylesheet" href="css/styles2.css">
     <link rel="icon" type="image/png" href="images/falcon-icon.png">
     <script src="javascript/profile.js" defer></script>
     
