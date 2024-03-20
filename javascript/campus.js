@@ -1,19 +1,15 @@
-let BuildingB=document.querySelector('#b-building');
-// let Campus=document.querySelector('#Campus');
-
-  BuildingB.addEventListener("click", function (e) {
-  //  document.querySelector('#b building');
-  window.location.assign("map-building.php?building=b-building");
- // alert('go to building XX');
-
-});
-
-
-  document.getElementById('button-menu').addEventListener("click", function (e) {
-    document.querySelector('.options-menu').classList.toggle("hide");
-    this.classList.toggle("active");
-   // document.querySelector('#security-label').classList.toggle("active");
+  document.querySelector('#button-menu').addEventListener("click", function (e) {
+    document.querySelector('#layers-menu').classList.toggle("active");
+    document.querySelector('#accessible-label').focus();
   });
+  //hide on clicking outside
+  // window.addEventListener('click', function(e){   
+  //   if (document.getElementById('layers-menu').contains(e.target)){
+  //     // Clicked in box
+  //   } else{
+  //     document.querySelector('#layers-menu').classList.remove("active");
+  //   }
+  // });
 
   document.querySelector('#accessible-label').addEventListener("click", function (e) {
     document.querySelector('#accesibility').classList.toggle("hide");
