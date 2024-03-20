@@ -3,8 +3,12 @@ ini_set('max_execution_time', '0');
 header('Content-Type: text/html; charset=UTF-8');
 header("Access-Control-Allow-Origin: *");
 include "includes/application_top.php";
-
-if($_GET['building']=='b-building'){
+$disabled=($_GET['disabled']??'off');
+if(isset($_GET['id_room'])){
+    
+    header('Location: map-building-alone.php?'.get_link_room_highlighted($_GET['id_room']).($disabled=='on'?'&disabled=on':''));
+}
+//if($_GET['building']=='b-building'){
     $query = "SELECT * from building WHERE code_building='".$_GET['building']."'";
     $map_query = tep_db_query($query);
     $total = mysqli_num_rows($map_query);
@@ -17,7 +21,7 @@ if($_GET['building']=='b-building'){
         $level = $building['default_level'];
       }
     }
-    //echo $level;
+  // $level='level-0';
     if(isset($_GET['level'])){ $level=$_GET['level'];}
 
     $query = "SELECT * from floor WHERE id_building='".$id_building."' AND code_floor='".$level."'";
@@ -34,9 +38,9 @@ if($_GET['building']=='b-building'){
     }
 
 
-    }else{
-        header("Location: map.php");
-    }
+   // }else{
+       // header("Location: map.php");
+  //  }
    
 ?>
 <!DOCTYPE html>
@@ -45,14 +49,32 @@ if($_GET['building']=='b-building'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php 
+include "headers_scripts.php";
+?>
+<script>
+<?php
+$r_query = "SELECT * from room WHERE id_floor='".$id_floor."'";
+$room_query = tep_db_query($r_query);
+$total_rooms = mysqli_num_rows($room_query);
 
-    <!-- <script src="javascript/buildings.js" defer></script> -->
+if ($total_rooms > 0) {
+echo 'const rooms=[';
+  while ($rooms = tep_db_fetch_array($room_query)) {
+    $id_room = $rooms['id_room'];
+    $code_room = $rooms['code_room'];
+echo "{code_room:'$code_room',id_room:'$id_room'},";
+  }
+echo '];';
+}
+
+?>
+</script>
+    <script src="javascript/floor.js" defer></script>
     <script src="vendors/svg-zoom/hammer.js"></script>
     <script src="vendors/svg-zoom/svg-pan-zoom.js"></script>
-    <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/building.css">
-    <link rel="icon" type="image/png" href="images/falcon-icon.png">
+
 </head>
 
 <body class="falcon-body">
@@ -254,6 +276,41 @@ if($_GET['building']=='b-building'){
     </div>
     
     <div id="mobile-div">
+        <?php if($disabled=='off'){
+            ?>
+        <form action="" method="get" class="levelForm">
+            <label for="level">
+                <?php 
+                $query = $_GET;
+                // replace parameter(s)
+                unset($query['level']);
+                // rebuild url
+                $query_result = http_build_query($query);
+                // new link
+
+                ?>
+                <select name="level" id="level" class="select_floor" onchange="window.location.replace('map-building-alone.php?<?=$query_result?>&level='+this.value)">
+                <?php
+                 $query = "SELECT * from floor WHERE id_building='".$id_building."'";
+                 $level_query = tep_db_query($query);
+                 $total_levels = mysqli_num_rows($level_query);
+                 
+            
+                 
+                   while ($level_a = tep_db_fetch_array($level_query)) {
+                     $id_floor = $level_a['id_floor'];
+                     $name_floor = $level_a['name_floor'];
+                     $code_floor = $level_a['code_floor'];
+                   
+                   
+                 
+                ?>    
+                <option value="<?=$code_floor?>" <?=$level==$code_floor?'selected':''?>><?=$name_floor?></option>
+                <?php } ?>
+                </select>
+            </label>
+        </form>
+        <?php } ?>
 <?=$map?>
     </div>
     <script>
@@ -326,6 +383,8 @@ if($_GET['building']=='b-building'){
                 , center: 1
                 , customEventsHandler: eventsHandler
             });
+
+
         };
     </script>
     </main>

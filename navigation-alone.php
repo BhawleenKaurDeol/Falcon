@@ -36,7 +36,7 @@ include "includes/application_top.php";
 
   Navigate.addEventListener("click", function (e) {
   //  document.querySelector('#b building');
-  window.location.assign("map.php");
+  window.location.assign("map-alone.php");
  // alert('go to building XX');
 
 });

@@ -24,14 +24,32 @@ if ($total > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php 
+include "headers_scripts.php";
+?>
+<script>
+<?php
+$b_query = "SELECT * from building WHERE id_campus='".$id_campus."'";
+$build_query = tep_db_query($b_query);
+$total_build = mysqli_num_rows($build_query);
 
+if ($total_build > 0) {
+echo 'const buildings=[';
+  while ($rooms = tep_db_fetch_array($build_query)) {
+    $id_building = $rooms['id_building'];
+    $code_building = $rooms['code_building'];
+echo "{code_building:'$code_building',id_building:'$id_building'},";
+  }
+echo '];';
+}
+
+?>
+</script>
     <script src="javascript/campus.js" defer></script>
     <script src="vendors/svg-zoom/hammer.js"></script>
     <script src="vendors/svg-zoom/svg-pan-zoom.js"></script>
-    <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/campus.css">
-    <link rel="icon" type="image/png" href="images/falcon-icon.png">
+
 </head>
 
 <body class="falcon-body falcon-map">
@@ -259,12 +277,18 @@ if ($total > 0) {
 });
 
 let BuildingB=document.querySelector('#b-building');
+let BuildingA=document.querySelector('#a-building');
 // let Campus=document.querySelector('#Campus');
-
+BuildingA.addEventListener("click", function (e) {
+	window.location.assign("map-building-alone.php?building=a-building");
+});
   BuildingB.addEventListener("click", function (e) {
   //  document.querySelector('#b building');
+ if(parent.document.getElementById('list-building-2')){ 
   parent.document.getElementById('list-building-2').checked=true;
+
   parent.fetch_foors('2','list-building-2','no');
+}
   window.location.assign("map-building-alone.php?building=b-building");
  // alert('go to building XX');
 

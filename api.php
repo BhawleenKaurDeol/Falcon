@@ -23,6 +23,13 @@ $_REQUEST['id']='';
 	}
 $id=$_REQUEST['id']; 
 
+if(!isset($_REQUEST['room'])){
+$_REQUEST['room']='';
+}elseif(empty($_REQUEST['room'])){
+$_REQUEST['room']='';
+	}
+$room=$_REQUEST['room']; 
+
 // set type for search => string 
 if(!isset($_REQUEST['t'])){
 $_REQUEST['t']='';
@@ -74,6 +81,10 @@ $valid_ts[]='floor-Id-room';
 $valid_ts[]='campus-Id';
 $valid_ts[]='course-Id';
 $valid_ts[]='preferences-Id';
+$valid_ts[]='preferences-userId';
+$valid_ts[]='preferences-User-RoomId';
+$valid_ts[]='Addpreferences-User-RoomId';
+$valid_ts[]='Delpreferences-User-RoomId';
 $valid_ts[]='schedule-Id';
 $valid_ts[]='schedule-userId';
 
@@ -92,8 +103,9 @@ if($action=='UPDATE'){
     //Ej. api.php?id=1&t=users-Id&token=XXX => by POST for all the fields to be updated
     if(is_numeric($id)&&$id>0&&$t=='users-Id'){
         $table='users';
-        $query=build_update_query($table,$_POST,"user_id='".$id."'");       
+        $query=build_update_query($table,$_POST,"id_user='".$id."'");       
         $result['query'] = $query;
+       // echo $query;
     }
 
     //Ej. api.php?id=1&t=schedule-userId&token=XXX => by POST for all the fields to be updated
@@ -130,8 +142,8 @@ $result['post']=$_POST;
 
 if($action=='INSERT'){
     $result['result'] = 'false';
-    //Ej. api.php?id=1&t=users-Id&token=XXX => by POST for all the fields to be INSERTED
-    if(is_numeric($id)&&$id>0&&$t=='users-Id'){
+    //Ej. api.php?t=users-Id&token=XXX => by POST for all the fields to be INSERTED
+    if($t=='users-Id'){
         $table='users';
         $query=build_insert_query($table,$_POST);       
         $result['query'] = $query;
@@ -208,7 +220,9 @@ if($action=='SELECT'){
         //Ej. api.php?id=1&t=building-Id-floor&token=XXX => by either GET or POST
     if(is_numeric($id)&&$id>0&&$t=='building-Id-floor'){
         $table='floor';
+        $f='id_floor,code_floor,name_floor,id_building';
         $query=$action." $f from $table where id_building='$id' and status_$table='active' order by name_$table";
+       // echo $query;
     }
         //Ej. api.php?id=1&t=building-Id&token=XXX => by either GET or POST
     if(is_numeric($id)&&$id>0&&$t=='building-Id'){
@@ -238,6 +252,13 @@ if($action=='SELECT'){
         $table='preferences';
         $query=$action." $f from $table where preferences='$id'";
     }
+    
+        //Ej. api.php?id=1&t=preferences-UserId&token=XXX => by either GET or POST
+    if(is_numeric($id)&&$id>0&&$t=='preferences-UserId'){
+        $table='preferences';
+        $query=$action." $f from $table where id_user='$id'";
+    }
+     
     
         //Ej. api.php?id=1&t=schedule-Id&token=XXX => by either GET or POST
     if(is_numeric($id)&&$id>0&&$t=='schedule-Id'){
@@ -319,7 +340,7 @@ if($action=='SELECT'){
     $tep_query = tep_db_query($query);
     $total=mysqli_num_rows($tep_query);
     if($total>0){
-    
+     //   $result['result'] = 'true';
             $tep_query = tep_db_query($query.' '.$limit);    
           
           //  print_r($rows); 
@@ -401,6 +422,59 @@ function build_insert_query($table,$post){
     return $sql_final;
 }
 
+   //Ej. api.php?id=1&room=1&t=preferences-User-RoomId&token=XXX => by either GET or POST
+   if(is_numeric($id)&&$id>0&&is_numeric($room)&&$room>0&&$t=='preferences-User-RoomId'){
+    $table='preferences';
+    $query=$action." $f from $table where id_user='$id' and id_room='$room'";
+   // echo $query;
+   $tep_query=tep_db_query($query); 
+   $total=mysqli_num_rows($tep_query);
+   if($total>0){
+       
+       $new_query="DELETE FROM `falcon`.`preferences` WHERE `id_user` = '$id' and `id_room` = '$room'";
+       $result['result'] = 'false';
+   }else{
+    $new_query="INSERT INTO `preferences`(`id_user`, `id_room`) VALUES ('$id', '$room')";
+
+    $result['result'] = 'true';
+   }
+   tep_db_query($new_query); 
+   
+}
+   //Ej. api.php?id=1&room=1&t=preferences-User-RoomId&token=XXX => by either GET or POST
+   if(is_numeric($id)&&$id>0&&is_numeric($room)&&$room>0&&$t=='Addpreferences-User-RoomId'){
+    $table='preferences';
+    $query=$action." $f from $table where id_user='$id' and id_room='$room'";
+   // echo $query;
+   $tep_query=tep_db_query($query); 
+   $total=mysqli_num_rows($tep_query);
+
+       
+       $new_query="DELETE FROM `falcon`.`preferences` WHERE `id_user` = '$id' and `id_room` = '$room'";
+       $result['result'] = 'false';
+       tep_db_query($new_query); 
+    $new_query2="INSERT INTO `preferences`(`id_user`, `id_room`) VALUES ('$id', '$room')";
+
+    $result['result'] = 'true';
+   
+   tep_db_query($new_query2); 
+   
+}
+   //Ej. api.php?id=1&room=1&t=preferences-User-RoomId&token=XXX => by either GET or POST
+   if(is_numeric($id)&&$id>0&&is_numeric($room)&&$room>0&&$t=='Delpreferences-User-RoomId'){
+    $table='preferences';
+    $query=$action." * from $table where id_user='$id' and id_room='$room'";
+   // echo $query;
+   $tep_query=tep_db_query($query); 
+   $total=mysqli_num_rows($tep_query);
+
+       
+       $new_query="DELETE FROM `falcon`.`preferences` WHERE `id_user` = '$id' and `id_room` = '$room'";
+       $result['result'] = 'true';
+   
+   tep_db_query($new_query); 
+   
+}
 
 echo json_encode($result);
 //print_r($result);
