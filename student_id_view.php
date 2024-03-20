@@ -2,13 +2,14 @@
 ini_set('max_execution_time', '0');
 header('Content-Type: text/html; charset=UTF-8');
 header("Access-Control-Allow-Origin: *");
+$force_login=false;
 include "includes/application_top.php";
 include "vendors/phpbarcode/php-barcode.php";
 ?>
 <?php
-if (isset($_SESSION['ID_USER'])) {
+if (isset($_GET['q'])) {
 
-  $query = "SELECT * from users WHERE id_user='" . $_SESSION['ID_USER'] . "'";
+  $query = "SELECT * from users WHERE id_user='" . $_GET['q'] . "'";
   $student_query = tep_db_query($query);
   $total = mysqli_num_rows($student_query);
 
@@ -45,7 +46,7 @@ if (isset($_SESSION['ID_USER'])) {
 </head>
 <body class="falcon-body">
     <?php 
-    include "header.php";
+  //  include "header.php";
     ?>
     <main id="main_content">
 
@@ -103,7 +104,7 @@ if (isset($_SESSION['ID_USER'])) {
 
     </main>
 <?php
-include "footer.php";
+//include "footer.php";
 ?>
 </body>
 </html>

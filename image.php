@@ -10,9 +10,9 @@ include "includes/application_top.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendors/cropper.js/cropper.css">
-    
-    <script defer src="vendors/cropper.js/cropper.js"></script>
-    <script defer src="image.js"></script>
+    <script  src="vendors/cropper.js/cropper.js" defer></script>
+    <script  src="javascript/image.js" defer></script>
+    <!-- <script  src="javascript/webcam.js" defer></script> -->
     <title>Image Cropper</title>
     <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="images/falcon-icon.png">
@@ -23,53 +23,60 @@ include "includes/application_top.php";
 
 
 </head>
-<body class="falcon-body image-body">
-    <?php 
-    include "header.php";
-    ?>
-
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <!-- <span class="close">&times;</span> -->
-        <p>Select an option:</p>
-        <button id="cameraBtn">Camera</button>
-        <label for="file-input" id="uploadBtn">Upload</label>
-        <input type="file" id="file-input" accept="image/*" style=display:none />
-    </div>
-</div>
-
-    <main id="main_content">
-<div class="main-container">
-    <div class="camera">
-        <video id="video">Video stream not available.</video>    
-    </div>
-    <div class="button">
-    <button id="startbutton" style="display: none;">Take photo</button>
-    </div>
-    <canvas id="canvas" style="display: none;"></canvas>
-    
-    <div class="img-container" style="display: none;">
-        <img id="image-to-crop" src="" class="crop-target" alt="Captured image will appear here...">
-    </div>
+<body class="">
+    <div class="falcon-body image-body">
+        <?php
+        include "header.php";
+        ?>
         
-        <div class="crop button"><button id="btn-crop">Crop</button></div>
-    <div class="cropped-img">
-        <img src="" id="output" alt=" ">
+        <!-- <div id="myModal" class="modal">
+        <div class="modal-content">
+        
+            <p>Select an option:</p>
+            <button id="cameraBtn">Camera</button>
+            <label for="file-input" id="uploadBtn">Upload</label>
+            <input type="file" id="file-input" accept="image/*"  />
+        </div>
+        </div> -->
+        <main id="main_content">
+        <div class="main-container">
+        <div class="hide" id="image_camera">
+            <div class="camera">
+                <video id="video">Video stream not available.</video>
+            </div>
+            <div class="button">
+            <button id="startbutton" >Take photo</button>
+            </div>
+            <canvas id="canvas" ></canvas>
+        </div>
+        <div class="hide" id="image_cropper">
+        
+            <div class="img-container" >
+                <img id="image-to-crop" src="images/placeholder-640x480.webp" class="crop-target" alt="Captured image will appear here...">
+            </div>
+        
+                <div class="crop button"><button id="btn-crop">Crop</button></div>
+                <input type="file" id="file-input" accept="image/*" class="hide"  />
+        </div>
+        <div class="hide" id="image_result">
+            <div class="cropped-img">
+                <img src="" id="output" alt=" ">
+            </div>
+            <form action="" method="post" id="form_picture">
+              <input type="hidden" name="action" value="1">
+              <input type="hidden" id="picture" name="picture" value="">
+              <div class="save-cancel">
+                <input type="submit" value="save" id="save">
+                <button id="cancel" >Cancel</button>
+            </div>
+              </form>
+        </div>
+        
+        </div>
+        </main>
+        <?php
+        include "footer.php";
+        ?>
     </div>
-
-    <div class="save-cancel">
-        <button id="save" >Save</button>
-        <button id="cancel" >Cancel</button>
-    </div>
-
-  <input type="hidden" name="action" value="1">
-  <input type="hidden" name="id_user" value="<?=$_SESSION['ID_USER']?>">
-
-</div>
-</main>
-<?php
-include "footer.php";
-?>
 </body>
 </html>

@@ -34,18 +34,15 @@ if ($total > 0) {
     <link rel="icon" type="image/png" href="images/falcon-icon.png">
 </head>
 
-<body class="falcon-body">
-    <?php 
-    include "header.php";
-    ?>
-    <main class="map-container">
+<body class="falcon-body falcon-map">
+    <main class="map-container" style="height:100%;">
 		<div id="navigate-menu">
-		<div class="button-navigate"><svg id="button-navigate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M19.96,30.05c2.35-2.94,7.72-10.08,7.72-14.09,0-4.86-3.94-8.8-8.8-8.8s-8.8,3.94-8.8,8.8c0,4.01,5.37,11.14,7.72,14.09.56.7,1.61.7,2.17,0h0ZM18.87,13.03c1.62,0,2.93,1.31,2.93,2.93s-1.31,2.93-2.93,2.93-2.93-1.31-2.93-2.93,1.31-2.93,2.93-2.93Z"/></svg></div>
-		<div class="label-navigate">Find me? (GPS)</div>
+		<div class="button-navigate" style="top: 10px;    left: 10px;"><svg id="button-navigate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M19.96,30.05c2.35-2.94,7.72-10.08,7.72-14.09,0-4.86-3.94-8.8-8.8-8.8s-8.8,3.94-8.8,8.8c0,4.01,5.37,11.14,7.72,14.09.56.7,1.61.7,2.17,0h0ZM18.87,13.03c1.62,0,2.93,1.31,2.93,2.93s-1.31,2.93-2.93,2.93-2.93-1.31-2.93-2.93,1.31-2.93,2.93-2.93Z"/></svg></div>
+		<div class="label-navigate" style="top: 16px;    left: 50px;">Find me? (GPS)</div>
 		</div>
     <div id="layers-menu">
-<div class="button-menu"><svg id="button-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M17.4,7.25c.65-.3,1.41-.3,2.06,0l9.6,4.43c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l9.6-4.43ZM26.72,16.22l2.34,1.08c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l2.34-1.08,6.67,3.08c1.03.47,2.21.47,3.24,0l6.67-3.08h0ZM20.05,24.92l6.67-3.08,2.34,1.08c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l2.34-1.08,6.67,3.08c1.03.47,2.21.47,3.24,0h0Z"/></svg></div>
-<div class="options-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.29 246.01" id="options-menu">
+<div class="button-menu" style="    bottom: 10px;   left: 10px;"><svg id="button-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M17.4,7.25c.65-.3,1.41-.3,2.06,0l9.6,4.43c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l9.6-4.43ZM26.72,16.22l2.34,1.08c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l2.34-1.08,6.67,3.08c1.03.47,2.21.47,3.24,0l6.67-3.08h0ZM20.05,24.92l6.67-3.08,2.34,1.08c.37.17.61.54.61.96s-.24.79-.61.96l-9.6,4.43c-.65.3-1.41.3-2.06,0l-9.6-4.43c-.37-.18-.61-.55-.61-.96s.24-.79.61-.96l2.34-1.08,6.67,3.08c1.03.47,2.21.47,3.24,0h0Z"/></svg></div>
+<div class="options-menu" style="    bottom: 62px;    left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.29 246.01" id="options-menu">
 	<g id="bg">
 		<rect class="cls-18" width="150.29" height="246.01" />
 	</g>
@@ -174,6 +171,12 @@ if ($total > 0) {
 <?=$map?>
     </div>
     <script>
+        <?php
+        if(!empty($_GET['selected']??'')){
+            echo "document.getElementById('".$_GET['selected']."').classList.add('selected');";
+        }
+        ?>
+        
         // Don't use window.onLoad like this in production, because it can only listen to one function.
         window.onload = function () {
             var eventsHandler;
@@ -244,21 +247,32 @@ if ($total > 0) {
                 , customEventsHandler: eventsHandler
             });
         };
-		
+
+        let Navigate=document.querySelector('#button-navigate');
+// let Campus=document.querySelector('#Campus');
+
+  Navigate.addEventListener("click", function (e) {
+  //  document.querySelector('#b building');
+  window.location.assign("navigation-alone.php");
+ // alert('go to building XX');
+
+});
+
 let BuildingB=document.querySelector('#b-building');
 // let Campus=document.querySelector('#Campus');
 
   BuildingB.addEventListener("click", function (e) {
   //  document.querySelector('#b building');
+  parent.document.getElementById('list-building-2').checked=true;
+  parent.fetch_foors('2','list-building-2','no');
   window.location.assign("map-building-alone.php?building=b-building");
  // alert('go to building XX');
 
 });
     </script>
     </main>
-    <?php
-include "footer.php";
-?>
+    <script src="vendors/sweetalert/sweetalert-v2.11.js"></script>
+<script src="javascript/general.js" defer></script>
 </body>
 
 </html>

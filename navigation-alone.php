@@ -21,16 +21,14 @@ include "includes/application_top.php";
 </head>
 
 <body class="falcon-body">
-    <?php
-    include "header.php";
-    ?>
-    <main id="main_content">
+  
+    <main id="main_content" style="    height: 100vh">
     <div id="map-menu">
-		<div class="button-map"><svg id="button-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M11.95,6.86c-1.21,0-2.18.98-2.18,2.18v18.92c0,1.21.98,2.18,2.18,2.18h4.37v-3.64c0-1.21.98-2.18,2.18-2.18s2.18.98,2.18,2.18v3.64h4.37c1.21,0,2.18-.98,2.18-2.18V9.04c0-1.21-.98-2.18-2.18-2.18h-13.1ZM12.68,17.77c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM17.77,17.04h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73ZM21.41,17.77c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM13.41,11.22h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73ZM17.04,11.95c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM22.14,11.22h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73Z"/></svg></div>
-		<div class="label-map_return">Find rooms</div>
+		<div class="button-map" style="top: 10px; left: 10px;"><svg id="button-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><circle class="orange-fill" cx="18.5" cy="18.5" r="18.5"/><path class="white-fill" d="M11.95,6.86c-1.21,0-2.18.98-2.18,2.18v18.92c0,1.21.98,2.18,2.18,2.18h4.37v-3.64c0-1.21.98-2.18,2.18-2.18s2.18.98,2.18,2.18v3.64h4.37c1.21,0,2.18-.98,2.18-2.18V9.04c0-1.21-.98-2.18-2.18-2.18h-13.1ZM12.68,17.77c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM17.77,17.04h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73ZM21.41,17.77c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM13.41,11.22h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73ZM17.04,11.95c0-.4.33-.73.73-.73h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46ZM22.14,11.22h1.46c.4,0,.73.33.73.73v1.46c0,.4-.33.73-.73.73h-1.46c-.4,0-.73-.33-.73-.73v-1.46c0-.4.33-.73.73-.73Z"/></svg></div>
+		<div class="label-map_return" style="    top: 16px;left: 50px;">Find rooms</div>
 		</div>
-        <button class="btn btn-success"  id="myLocation"><i class="fa-solid fa-location-crosshairs fa-xl"></i> FIND ME!</button>
-        <button class="btn btn-primary"  id="reset_map">RESET</button>
+        <button class="btn btn-success"  id="myLocation" style="top: 10px;right: 10px;    margin: 0;"><i class="fa-solid fa-location-crosshairs fa-xl"></i> FIND ME!</button>
+        <button class="btn btn-primary"  id="reset_map" style="margin: 0;right: 0px;bottom: 55px;">RESET</button>
         <div id="map"></div>
         <script>
             let Navigate=document.querySelector('#button-map');
@@ -104,7 +102,7 @@ let distanceGroup = L.layerGroup().addTo(map);
             //    _location.lat= 0;
             //  _location.lng= 0;
             
-              radius=10;
+           //   radius=10;
                 if(check_inside_campus(_location)){
                     L.marker(_location, {icon: personIcon}).addTo(markerGroup).bindPopup("<center><b>You are in Langara!</b> <br>  Your location is within <b>" + radius.toFixed(2) + " meters</b> from this point.</center>").openPopup();
                     L.circle(_location, radius).addTo(markerGroup);
@@ -243,9 +241,9 @@ function check_distance_campus(_pointA){
 }
         </script>
     </main>
-    <?php
-    include "footer.php";
-    ?>
+    <script src="vendors/sweetalert/sweetalert-v2.11.js"></script>
+<script src="javascript/general.js" defer></script>
+
 
 </body>
 
