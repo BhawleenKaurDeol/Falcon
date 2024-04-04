@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    
+    padding: 0;
+}
+
+.falcon-body{
+    background: linear-gradient(0deg, #000 -129.52%, #FF5C02 85.89%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main-content{
+    height: 100%;
+    width: 100%;
+
+}
+.login-content{
+    width: 100%;
+    max-width: 500px;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:1rem;
+ 
+}
+.login-content h1{
+    color: #FEFEFE;
+
+text-align: center;
+font-family: Dosis;
+font-size: 70px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin: 0;
+
+}
+.login-content h1.signup_h1{
+    color: #FEFEFE;
+
+text-align: center;
+font-family: Dosis;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin: 0;
+
+}
+#form_login{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap:1rem
+}
+#form_login label{
+    color: #FFF;
+    font-family: Dosis;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+}
+#form_login input{
+    border-radius: 10px;
+border: 1px solid #FFF;
+width: 100%;
+background: #FFF;
+color: black;
+padding: .5rem;
+
+/* H2 */
+font-family: Dosis;
+font-size: 1.5rem;
+}
+#form_login input::placeholder{
+    color: #E5E5E5;
+}
+#form_login .input-group{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+.btn-login{
+    display: flex;
+  
+    height: 40px;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+background: #FF5C02;
+color: white;
+border: 0;
+font-size: 1rem;
+}
+.btn-signup{
+    display: flex;
+  width: 100%;
+    height: 40px;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+background: #ffffff;
+color: black;
+border: 0;
+font-size: 1rem;
+}
+.login-content .logo{
+    width: 100%;
+    max-width: 200px;
+    min-width: 50px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-content .logo-signup{
+    width: 100%;
+    max-width: 100px;
+    min-width: 50px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forgot{
+    text-align: right;
+    color: white;
+    align-self: flex-end;
+    margin-top: .5rem;
+    font-size: .9rem;
+}
+.signup{
+    color: #FFF;
+
+text-align: center;
+font-family: Dosis;
+font-size: .9rem;
+font-style: normal;
+font-weight: 400;
+display: flex;
+flex-flow: column nowrap;
+gap: 1rem;
+
+}
+h2{
+    color:white;
+}

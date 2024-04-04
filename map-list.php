@@ -20,6 +20,10 @@ $search_room = '';
 if (isset($_GET['search_room'])) {
     $search_room = $_GET['search_room'];
 }
+$active_building='';
+if (isset($_GET['active_building'])) {
+    $active_building = $_GET['active_building'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -171,8 +175,8 @@ if (isset($_GET['search_room'])) {
                         $id_room = $preferences['id_room'];
                     ?>
                         <li class="room-border-map">
-                            <a onclick="load_map('map-building-alone.php?<?= get_link_room_highlighted($id_room) ?>')">
-                                <h3 style="text-align:center;"><?= get_field_room($id_room, 'code_room') ?></h3>
+                            <a onclick="load_map('map-building-alone.php?<?= get_link_room_highlighted($id_room) ?>')" alt="Open <?= get_field_room($id_room, 'name_room') ?>" title="Open <?= get_field_room($id_room, 'name_room') ?>">
+                                <h3 style="text-align:center;"><i class="fa-solid fa-map-pin"></i> <?= get_field_room($id_room, 'code_room') ?></h3>
                             </a>
                         </li>
                     <?php
@@ -259,7 +263,7 @@ if (isset($_GET['search_room'])) {
                 let return_html = '<ul class="room_list">';
                 result.forEach(element => {
                     if (element.name_room.toLowerCase().includes(search_room.toLowerCase())) {
-                        return_html += '<li><a href="room.php?=id=' + element.id_room + '">' + element.name_room + '</a><div class="menu_room_list"><a onclick="addPreference(\'' + logged_user_id + '\',\'' + element.id_room + '\',\'' + element.code_room + '\')"><i class="fa-regular fa-heart"></i></a> <a onclick="load_map(\'map-building-alone.php?id_room='+element.id_room+'\',true)"><i class="fa-solid fa-location-pin"></i></a> </div></li>';
+                        return_html += '<li><a href="room.php?id=' + element.id_room + '">' + element.name_room + '</a><div class="menu_room_list"><a onclick="addPreference(\'' + logged_user_id + '\',\'' + element.id_room + '\',\'' + element.code_room + '\')"><i class="fa-regular fa-heart"></i></a> <a onclick="load_map(\'map-building-alone.php?id_room='+element.id_room+'\',true)"><i class="fa-solid fa-map-pin"></i></a> </div></li>';
                     }
                 });
                 return_html += '</ul>';
@@ -279,7 +283,7 @@ if (isset($_GET['search_room'])) {
             let return_html = '<ul class="room_list">';
             result.forEach(element => {
                 if (element.name_room.toLowerCase().includes(search_room.toLowerCase())) {
-                    return_html += '<li>' + element.name_room + '<div class="menu_room_list"><a onclick="addPreference(\'' + logged_user_id + '\',\'' + element.id_room + '\',\'' + element.code_room + '\')"><i class="fa-regular fa-heart"></i></a> <a href="room.php?=id=' + element.id_room + '"><i class="fa-solid fa-location-pin"></i></a> <a href="room.php?=id=' + element.id_room + '"><i class="fa-solid fa-chalkboard-user"></i></a></div></li>';
+                    return_html += '<li>' + element.name_room + '<div class="menu_room_list"><a onclick="addPreference(\'' + logged_user_id + '\',\'' + element.id_room + '\',\'' + element.code_room + '\')"><i class="fa-regular fa-heart"></i></a> <a href="room.php?id=' + element.id_room + '"><i class="fa-solid fa-map-pin"></i></a> <a href="room.php?id=' + element.id_room + '"><i class="fa-solid fa-person-chalkboard"></i></a></div></li>';
                 }
 
 
@@ -303,7 +307,8 @@ if (isset($_GET['search_room'])) {
             }
            
         }
-        load_map('map-alone.php');
+        
+        load_map('<?=(isset($_GET['building'])&&isset($_GET['active_room'])&&isset($_GET['level']))?'map-building-alone.php?'.$_SERVER['QUERY_STRING']:'map-alone.php?'.$_SERVER['QUERY_STRING']?>');
     </script>
 
 </body>

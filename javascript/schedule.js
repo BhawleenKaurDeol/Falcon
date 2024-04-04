@@ -1,9 +1,15 @@
+const allRooms = [];
+const allCourses = [];
+
+// Change color of element selected
 function removeClassFromClassElements(className, classToRemove) {
   var elements = document.getElementsByClassName(className);
   for (var i = 0; i < elements.length; i++) {
       elements[i].classList.remove(classToRemove);
   }
 }
+
+// Load data
 async function logData() {
   logged_user_id=5;
   // Requst
@@ -50,6 +56,7 @@ const createRowElement = (value) => {
 }
 
 async function addCourse() {
+  alert("hello 2")
     const id_room = document.getElementById("room").value;
     const id_course = document.getElementById("Code").value;
     const term_schedule = document.getElementById("term").value;
@@ -88,18 +95,68 @@ async function addCourse() {
     alert("Your course has been sucessfully added!");
 
     // show the schedule form
-
-    showScheduleTable();
+  
+    showTableContainer();
+    updateButtonTextToCreate();
+    showFormSchedule();
   }
+
+  function resetFormValues() {
+    const id_room = document.getElementById("room");
+    id_room.value = "";
+    const id_course = document.getElementById("Code");
+    id_course.value = "";
+    const term_schedule = document.getElementById("term");
+    term_schedule.value = "";
+    const day_schedule = document.getElementById("day");
+    day_schedule.value = "";
+    const start_hour_schedule = document.getElementById("startTime");
+    start_hour_schedule.value = "";
+    const end_hour_schedule = document.getElementById("endTime");
+    end_hour_schedule.value = "";
+    const idSchedule = document.getElementById("id_schedule");
+
+    console.log(idSchedule)
+    idSchedule.value = "";
+  }
+
+  function addNewCourse(){
+
+    resetFormValues();
+    updateButtonTextToCreate();
+    hideTableContainer();
+    showFormSchedule()
+  }
+
+  // TABLE CONTAINER FUNCTIONS DISPLAY
+
+  function getTableContainer() {
+   return document.getElementById("table-container");
+  } 
+
+  function showTableContainer(){
+    const tableContainer = getTableContainer();
+    tableContainer.classList.remove("hidden");
+  }
+
+  function hideTableContainer(){
+    const tableContainer = getTableContainer();
+    tableContainer.classList.add("hidden");
+  }
+
+  // END TABLE CONTAINER FUNCTIONS DISPLAY
+
   
-  function showScheduleTable() {
-    const formTitle = document.getElementById("formTitle");
+  function showFormSchedule() {
+    // const formTitle = document.getElementById("formTitle");
     const courseForm = document.getElementById("courseForm");
-    const tableContainer = document.getElementById("table-container");
+    // const tableContainer = document.getElementById("table-container");
+
+    courseForm.classList.remove("edit-form-hidden");
   
-    formTitle.style.display = "block";
-    courseForm.style.display = "block";
-    tableContainer.style.display = "block";
+    // formTitle.style.display = "block";
+    // courseForm.style.display = "block";
+    // tableContainer.style.display = "block";
   }
 
   // hide the schedule table and show again the schedule table
@@ -107,6 +164,7 @@ async function addCourse() {
 
 
   async function addCourse() {
+    // THIS IS BEING CALLED, NOT THE OTHER ONE
     const id_room = document.getElementById("room").value;
     const id_course = document.getElementById("Code").value;
     const term_schedule = document.getElementById("term").value;
@@ -146,7 +204,7 @@ async function addCourse() {
     alert("Your course has been successfully added!");
   
     // Hide the schedule form table
-    
+    showTableContainer();
     hideScheduleForm();
   }
   
@@ -154,10 +212,12 @@ async function addCourse() {
     const formTitle = document.getElementById("formTitle");
     const courseForm = document.getElementById("courseForm");
     const tableContainer = document.getElementById("table-container");
+
+    courseForm.classList.add("edit-form-hidden");
   
-    formTitle.style.display = "none";
-    courseForm.style.display = "none";
-    tableContainer.style.display = "block"; 
+    // formTitle.style.display = "none";
+    // courseForm.style.display = "none";
+    // tableContainer.style.display = "block"; 
   }
 
     
@@ -191,7 +251,10 @@ async function addCourse() {
     newRow.classList.add("course-row")
     newRow.addEventListener('click', () =>{
       removeClassFromClassElements("course-row","course-selected")
-      setUpdateFormValues(id_room, id_course, term_schedule, day_schedule, start_hour_schedule, end_hour_schedule)
+      localStorage.setItem("course-selected", JSON.stringify({
+        id_room, id_course, term_schedule, day_schedule,  start_hour_schedule, end_hour_schedule
+      }))
+      setUpdateFormValues(id_room, id_course, term_schedule, day_schedule,  start_hour_schedule, end_hour_schedule)
       newRow.classList.add("course-selected")
     }) 
     return newRow
@@ -233,11 +296,14 @@ const CoursesURL = "https://inteligencia.ec/falcon/api.php?t=course-all&token=XX
 // room 
 
 const addInitialRooms = (rooms) =>{
+console.log(rooms, "add initial rooms")
+allRooms.push(...rooms)
+console.log(allRooms,"allRooms allRooms allRooms")
 console.log(rooms);
 
 const elemetSelectRooms = document.getElementById("room-suggestions");
-console.log(elemetSelectRooms);
-console.log(rooms);
+
+console.log(rooms, "rooms rooms")
 
 rooms.forEach((room, id) => {
 
@@ -246,8 +312,8 @@ rooms.forEach((room, id) => {
  
     // code room + name room
   const option = document.createElement('option');
-  option.textContent = room?.name_room
-  option.value = room?.name_room  
+  option.textContent = room?.name_room;
+  option.value = room?.name_room; 
    
 
   elemetSelectRooms.appendChild(option)
@@ -258,6 +324,9 @@ rooms.forEach((room, id) => {
 // course 
 
 const addInitialCourses = (courses) =>{
+  allCourses.push(...courses)
+
+  console.log(allCourses, "allCourses allCourses")
   const elemetSelectCourses = document.getElementById("Code-suggestions");
   
   courses.forEach((course) => {
@@ -329,21 +398,43 @@ function editCourse() {
   (".course-selected");
 
   const courseSelected=localStorage.getItem("course-selected")
+
   if (element && courseSelected) {
 
     if (window.confirm("Do you really want to edit this course?")) {
-     const parsedCourseSelected=JSON.parse(courseSelected)
+    // Get selected row to edit and parse it from string to object
+     const parsedCourseSelected=JSON.parse(courseSelected);
+    //  Remove class from elements - color red selected
      removeClassFromClassElements
      ("edit-form", "edit-form-hidden")
+    //  ROOM ELEMENT AND SET DATA
      const room = document.getElementById("room");
-     room.value=parsedCourseSelected.room
+    //  Find room with id_room from stored row - localstorage.setItem
+     const findRoom = allRooms.find(room => room.id_room == parsedCourseSelected.id_room)
+     room.value= findRoom.name_room;
+      //  COURSE ELEMENT AND SET DATA
      const Code = document.getElementById("Code");
-     Code.value=parsedCourseSelected.Code
+     const findCourse = allCourses.find(course => course.id_course == parsedCourseSelected.id_course)
+     Code.value=findCourse.name_course;
+      //  TERM ELEMENT AND SET DATA
      const day = document.getElementById("day");
-     day.value=parsedCourseSelected.day
-     const time = document.getElementById("time");
-     time.value=parsedCourseSelected.time
-   
+     day.value=parsedCourseSelected.day_schedule;
+     const term_schedule = document.getElementById("term");
+     term_schedule.value=parsedCourseSelected.term_schedule;
+     //  START TIME ELEMENT AND SET DATA
+     const startTime = document.getElementById("startTime");
+    //  Cut value time from 09:30:34... to only 09:30
+     startTime.value=parsedCourseSelected.start_hour_schedule.slice(0,5);
+     //  END TIME ELEMENT AND SET DATA
+     const endTime = document.getElementById("endTime");
+     endTime.value=parsedCourseSelected. end_hour_schedule.slice(0,5)
+    //  SET ID COURSE ON HIDDEN INPUT FIELD
+    const idCourseHidden = document.getElementById("id_schedule");
+    idCourseHidden.value = parsedCourseSelected?.id_schedule;
+     hideTableContainer();
+     updateButtonTextToEdit()
+      //  Display form 
+     showFormSchedule()
     }
       
   } else {
@@ -372,6 +463,20 @@ function updateCourse(){
 
 }
 
+
+// Button Update Text EDIT - CREATE
+
+const getButtonEditCreate = () => document.getElementById("add-course-button");
+
+const updateButtonTextToEdit = () => {
+  const button = getButtonEditCreate();
+  button.textContent = "Update Course"
+}
+
+const updateButtonTextToCreate = () => {
+  const button = getButtonEditCreate();
+  button.textContent = "Add Course"
+}
 
 // const btnEdit = document.querySelector('.edit-course');
 
@@ -403,24 +508,18 @@ function updateCourse(){
 // }
 
 
-// function hideForm() {
-//   const formTitle = document.getElementById("formTitle");
-//   const courseForm = document.getElementById("courseForm");
-//   const tableContainer = document.getElementById("table-container");
-
-//   formTitle.style.display = "none";
-//   courseForm.style.display = "none";
-//   tableContainer.style.display = "block";
-// }
 
 
 
-function showForm (){
-  const formTitle = document.getElementById("formTitle");
-  const courseForm = document.getElementById("courseForm");
-  const tableContainer = document.getElementById("table-container");
+// View schedule
 
-  formTitle.style.display = "block";
-  courseForm.style.display = "block";
-  tableContainer.style.display = "none";
-}
+
+function viewSchedule(){
+  hideScheduleForm()
+  showTableContainer()
+};
+
+
+
+
+

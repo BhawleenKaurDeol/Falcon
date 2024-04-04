@@ -3,14 +3,21 @@ async function logData() {
   const response = await fetch("api.php?id=" + logged_user_id + "&t=users-Id&token=XXX");
     const data = await response.json();
   console.log(data);
-  document.querySelector('#profile_picture').src = data[0].picture;
-  document.querySelector('#student_id').value = data[0].student_id;
-  document.querySelector('#email').value = data[0].email;
-  document.querySelector('#given_name').value = data[0].given_name;
-  document.querySelector('#last_name').value = data[0].last_name;
-  document.querySelector('#gender').value = data[0].gender;
-  document.querySelector('#phone_number').value = data[0].phone_number;
-  document.querySelector('#date_expire').value = data[0].date_expire;
+  let new_pic="images/placeholder-face.jpg";
+  data.forEach(user => {
+    if(user.picture!=null){
+      new_pic=user.picture;
+    }
+    document.querySelector('#profile_picture').src = new_pic;
+  document.querySelector('#student_id').value = user.student_id;
+  document.querySelector('#email').value = user.email;
+  document.querySelector('#given_name').value = user.given_name;
+  document.querySelector('#last_name').value = user.last_name;
+  document.querySelector('#gender').value = user.gender;
+  document.querySelector('#phone_number').value = user.phone_number;
+  document.querySelector('#date_expire').value = user.date_expire;
+  });
+  
 }
 logData();
 

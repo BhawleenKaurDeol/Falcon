@@ -1,83 +1,64 @@
-ul{
-    list-style-type: none;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3,1fr);
-    
-}
-li{
-    display: grid;
-    /* flex-grow: 1; */
-    justify-items: center;
+
+
+#main-content{
+    overflow-y: hidden;
+    overflow-y: hidden;
 }
 
-.desktop-navbar{
-    display: none;
-}
-/* .main-content{
+form{
+    /* max-width: 500px; */
     display: grid;
     align-items: center;
     justify-content: center;
-} */
-.user-card,.Id-card{
-    display: grid;
-    justify-items: center;
 }
 
-#main-content{
-    display: grid;
-    align-items: center;
-    grid-template-rows: repeat(1,1fr);
+input{
+    width: 100%;
 }
 
-/* FOOTER ==================== */
-
-footer{
-    background-color: black;
+button{
+    margin: 1rem 0;
+    padding: .5rem;
+    width: 30%;
+    justify-self: center;
 }
-footer ul{
+
+.login{
+    text-align: center;
+}
+
+.profile_image img {
+    border-radius: 50%;
+    margin: 0 auto;
+width: 100px;
+height: 100px;
+}
+.img_profile{
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.edit-btn{
+    background-color: orangered;
+    color:white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    text-decoration: none;
+    position: absolute;
+    bottom:0px;
+    right:20px;
     margin: 0;
-    padding: 0;
-    margin-bottom: 0;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    color: white;
-    border: 1px solid white;
-
 }
-footer ul li{
-    border: 1px solid white;
-    padding: 1.15rem;
-    margin-bottom: 0;
-    background-color: black;
-}
-footer a{
-    color: white;
-}
-
-
 @media screen and (min-width: 760px) {
-    body{
-        /* display: grid;
-        grid-template-rows: repeat(2,1fr); */
+    button{ 
+        width:100%
     }
-    .main-content{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
-    #main-content{
-        display: flex;
-        flex-flow: column;
-    }
-    footer{
+    .password-field{
         display: none;
     }
-    .mobile-navbar{
+    .login{
         display: none;
-    }
-    .desktop-navbar{
-        display: block;
     }
 }
-
-

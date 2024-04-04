@@ -1,4 +1,6 @@
-
+.falcon-body main.map-container{
+    overflow: hidden;
+}
 #Campus .cls-1 {
     fill: url(#Unnamed_Pattern);
 }
@@ -32,6 +34,9 @@
 
 #Campus .cls-2 {
     fill: #879b69;
+}
+.map_disabled #Campus .cls-2 {
+    fill: #9a9a9a;
 }
 
 #Campus .cls-3 {
@@ -113,6 +118,9 @@
 #Campus .cls-9 {
     fill: #dbe8c4;
 }
+.map_disabled #Campus .cls-9 {
+    fill: #e6e6e6;
+}
 
 #Campus .cls-10 {
     fill: #414042;
@@ -124,6 +132,9 @@
 
 #Campus .cls-11 {
     fill: #ebf2df;
+}
+.map_disabled #Campus .cls-11 {
+    fill: #ededed;
 }
 
 #Campus .cls-32 {
@@ -171,33 +182,83 @@
 
 
 
-#Campus #a-building:hover #a-floor,
-#Campus #b-building:hover #b-floor,
-#Campus #c-building:hover #c-floor,
-#Campus #d-building:hover #d-floor,
-#Campus #g-building:hover #g-floor,
-#Campus #l-building:hover #l-floor,
-#Campus #s-building:hover #s-floor,
-#Campus #m1-building:hover #m1-floor,
-#Campus #m2-building:hover #m2-floor,
-#Campus #m3-building:hover #m3-floor,
-#Campus #t-building:hover #t-floor {
+#Campus #a-building:hover #map-building-1,
+#Campus #b-building:hover #map-building-2,
+#Campus #c-building:hover #map-building-3,
+/* #Campus #d-building:hover #d-floor, */
+#Campus #g-building:hover #map-building-4,
+#Campus #l-building:hover #map-building-5,
+#Campus #s-building:hover #map-building-6,
+/* #Campus #m1-building:hover #m1-floor, */
+/* #Campus #m2-building:hover #m2-floor, */
+/* #Campus #m3-building:hover #m3-floor, */
+#Campus #t-building:hover #map-building-7 {
 
-    fill: orangered
+    fill: #d54c15;
+}
+.map_disabled #Campus #a-building:hover #map-building-1,
+.map_disabled #Campus #b-building:hover #map-building-2,
+.map_disabled #Campus #c-building:hover #map-building-3,
+/*.map_disabled  #Campus #d-building:hover #d-floor, */
+.map_disabled #Campus #g-building:hover #map-building-4,
+.map_disabled #Campus #l-building:hover #map-building-5,
+.map_disabled #Campus #s-building:hover #map-building-6,
+/*.map_disabled  #Campus #m1-building:hover #m1-floor, */
+/*.map_disabled  #Campus #m2-building:hover #m2-floor, */
+/*.map_disabled  #Campus #m3-building:hover #m3-floor, */
+.map_disabled #Campus #t-building:hover #map-building-7 {
+
+    fill: grey;
+}
+
+.map_disabled #bookstore, 
+.map_disabled #parking,
+.map_disabled #ev-charging,
+.map_disabled #food,
+.map_disabled #bikes,
+.map_disabled #security,
+.map_disabled #motorcycle,
+.map_disabled #bus-stop
+{
+    display: none;
+}
+#Campus .active .cls-3{
+    fill: orangered !important;
+}
+#Campus .active:hover .cls-3{
+    fill: deeppink !important;
+}
+.map_disabled #Campus .active:hover .cls-3{
+    fill: orangered !important;
 }
 
 #Campus #a-building,
-#Campus #b-building,
-#Campus #c-building,
-#Campus #d-building,
-#Campus #g-building,
-#Campus #l-building,
-#Campus #s-building,
-#Campus #m1-building,
+#Campus #b-building
+/* #Campus #c-building, */
+/* #Campus #d-building, */
+/* #Campus #g-building, */
+/* #Campus #l-building, */
+/* #Campus #s-building, */
+/* #Campus #m1-building,
 #Campus #m2-building,
-#Campus #m3-building,
-#Campus #t-building {
+#Campus #m3-building, */
+/* #Campus #t-building  */
+{
     cursor: pointer;
+}
+.map_disabled #Campus #a-building,
+.map_disabled #Campus #b-building
+/* #Campus #c-building, */
+/* #Campus #d-building, */
+/* #Campus #g-building, */
+/* #Campus #l-building, */
+/* #Campus #s-building, */
+/* #Campus #m1-building,
+#Campus #m2-building,
+#Campus #m3-building, */
+/* #Campus #t-building  */
+{
+    cursor:inherit;
 }
 
 

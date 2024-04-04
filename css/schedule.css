@@ -1,105 +1,51 @@
-
-
-#main_content {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
-    font-family: 'Open Sans Condensed', sans-serif;
-    letter-spacing: 0.2em;
-	font-size: 0.98em;
-  }
+.schedule{
+  display: flex;
+  flex-flow: column nowrap;
  
-  
-  #main_content form {
-    display: grid;
-   
-    
-  }
-  
-  #main_content input,#main_content label,#main_content select {
-    display: block;
-    padding: 0.3em;
-    margin: 0.2em;
-    
-  }
-
-
-  #main_content ul {
-    text-align: start;
-  }
-  
-  
-  #main_content #card {
-    position: relative;
-    width: 35em;
-    text-align: center;
-  }
-
-  /* table display */
-
-  #main_content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  #main_content table, #main_content th, #main_content td {
-    border: 1px solid grey;
-    padding: 1rem;
-    
-    text-align: center;
-  }
-  #main_content th {
-    background-color: grey;
-  }
- 
-  #main_content #scheduleTable {
-    border: 2px solid grey;
-  }
-  #main_content #scheduleTable th, #main_content #scheduleTable td {
-    border: 1px solid grey;
-    padding: 10px;
-  }
-  #main_content #scheduleTable th {
-    background-color: #dcdbdb;
-  }
-  #main_content #scheduleTable tbody tr:nth-child(even) {
-    background-color: #dcdbdb;
-  }
-  #main_content #scheduleTable tbody tr:hover {
-    background-color: #dcdbdb;
-  }
-
-  #main_content button, #main_content #courseForm button {
-    padding: 10px 20px;
-
-    margin-left: 10rem;
-    margin-right: 10rem;
-   
-    background-color: rgba(226, 82, 10, 0.938);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
+  /* align-items: center; */
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#main_content button:hover, #main_content #courseForm button:hover {
-    background-color: rgb(255, 131, 54);
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+  height: 480px;
 }
 
-@media screen and (min-width: 900px) {
-
-  #main_content{
-        background-image: url(./icons/images/id-background.jpg);
-    }
-
-    #main_content #courseForm{
-        /* display: inline-block; */
-    }
-
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal_content_div{
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+}

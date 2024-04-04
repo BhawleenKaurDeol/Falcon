@@ -2,7 +2,57 @@ body {
     padding: 0;
     margin: 0;
 }
-html, body, #map {
+
+html,
+body,
+#map {
     height: 100%;
     width: 100vw;
 }
+
+#reset_map {
+    position: absolute;
+    cursor: pointer;
+    bottom: 100px;
+    right: -15px;
+    z-index: 1000;
+    height: 20px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-color: white;
+    font-weight: bold;
+}
+
+#reset_map:hover {
+    background-color: #f4f4f4;
+}
+
+.leaflet-touch .leaflet-bar {
+    display: flex;
+}
+
+.leaflet-touch .leaflet-bar a {
+    border: none;
+}
+
+.leaflet-touch .leaflet-bar a.leaflet-control-zoom-out {
+    border-left: 1px solid grey;
+}
+
+#backToMap{
+    background-color: grey;
+}
+#backToMap:hover {
+    background-color: black;
+}
+.leaflet-left{
+left: auto;
+right:0;
+}
+.leaflet-top{
+    top: auto;
+    bottom:20px;
+    }

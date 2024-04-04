@@ -43,3 +43,7 @@ try {
 }
 });
 
+document.querySelector('#btn_signup').addEventListener('click',function(e){
+e.preventDefault();
+window.location.replace("signup.php");
+})

@@ -275,7 +275,7 @@ try {
   console.log(resData);
 
   if(resData.result=='true'){
-         window.location.replace("profile.php");
+         window.location.replace("profile2.php");
         console.log('Success!!!');
      }else{
    //      alert('There was an error');

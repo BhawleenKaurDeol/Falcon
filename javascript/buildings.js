@@ -57,4 +57,7 @@
   //   document.querySelector('#food').classList.toggle("hide");
   //   document.querySelector('#food-label .cls-14').classList.toggle("hide");
   // });
+  document.getElementById('floor').addEventListener('mousedown',function(e){
+    this.style.cursor('grabbing');
+  })
   

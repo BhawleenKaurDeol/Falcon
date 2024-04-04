@@ -30,6 +30,8 @@ if(isset($_GET['password'])){
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/login.css">
+
+    <link rel="manifest" href="./app.webmanifest">
 </head>
 
 <body class="falcon-body">
@@ -60,14 +62,37 @@ if(isset($_GET['password'])){
             </form>
             <div class="signup">
                 <p>New to the App? Create Your Own Account</p>
-                <button class="btn-signup">Create an account <i class="fa-regular fa-user"></i></button>
+                <button class="btn-signup" id="btn_signup" type="button">Create an account <i class="fa-regular fa-user"></i></button>
             </div>
         </div>
     </main>
-<script>
-   
-    </script>
+    <script>
+      ;(async () => {
+            // does the browser support service workers?
+            if ('serviceWorker' in navigator) {
+                // then register our service worker
+              try {
+                const reg = await  navigator.serviceWorker.register('./sw.js');
+                // display a success message
+                console.log(`Service Worker is Registered:`, reg);
+              } catch(error) {
+                // display an error message
+                console.log(`Service Worker Error (${error})`);
+              };
 
+              // ready is a Promise that never rejects and resolved when the service worker is active. 
+              const active = await navigator.serviceWorker.ready;
+              // we have an active service worker working for us
+              console.log(`Service Worker is Active:`, active);
+              // At this point, you can call methods that require an active service worker,
+              // like registration.pushManager.subscribe() for push notification
+            } else {
+              // happens when the app isn't served over a TLS connection (HTTPS)
+              console.warn('Service Worker not available');
+            }
+        })();//async IIFE
+  
+</script>
 </body>
 
 </html>

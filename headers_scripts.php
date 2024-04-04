@@ -6,6 +6,7 @@
     <script src="vendors/sweetalert/sweetalert-v2.11.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="javascript/general.js" defer></script>
+    <link rel="manifest" href="./app.webmanifest">
     <script>
 <?php 
 

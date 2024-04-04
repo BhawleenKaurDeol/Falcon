@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 header( 'Content-Type: text/html; charset=UTF-8' );
 header( "Access-Control-Allow-Origin: *" );
 $force_login=false;
@@ -86,6 +89,7 @@ $valid_ts[]='preferences-User-RoomId';
 $valid_ts[]='Addpreferences-User-RoomId';
 $valid_ts[]='Delpreferences-User-RoomId';
 $valid_ts[]='schedule-Id';
+$valid_ts[]='schedule-details-Id';
 $valid_ts[]='schedule-userId';
 
 
@@ -114,6 +118,7 @@ if($action=='UPDATE'){
         $query=build_update_query($table,$_POST,"user_id='".$id."'");
         $result['query'] = $query;
     }
+
     //Ej. api.php?id=1&t=schedule-userId&token=XXX => by POST for all the fields to be updated
     if(is_numeric($id)&&$id>0&&$t=='schedule-Id'){
         $table='schedule';
@@ -272,6 +277,11 @@ if($action=='SELECT'){
             $query=$action." $f from $table where id_user='$id'";
         }
     
+        if(is_numeric($id)&&$id>0&&$t=='schedule-details-Id'){
+            $table='schedule';
+            $query=$action." * from $table where id_schedule='$id' order by id_schedule";
+            echo '<h1>PRUEBA</h1>';
+        }
     
     // FOR type users-all
         //Ej. api.php?t=users-all&token=XXX => by either GET or POST - ("l" variable can be used to limit the results &l=2)
@@ -321,6 +331,7 @@ if($action=='SELECT'){
             $table='schedule';
             $query=$action." $f from $table order by id_schedule";
         }
+
     
     //echo $query;
     if(!empty($query)&&validate_token($token)&&in_array($t, $valid_ts)){
@@ -469,7 +480,7 @@ function build_insert_query($table,$post){
    $total=mysqli_num_rows($tep_query);
 
        
-       $new_query="DELETE FROM `falcon`.`preferences` WHERE `id_user` = '$id' and `id_room` = '$room'";
+       $new_query="DELETE FROM `preferences` WHERE `id_user` = '$id' and `id_room` = '$room'";
        $result['result'] = 'true';
    
    tep_db_query($new_query); 

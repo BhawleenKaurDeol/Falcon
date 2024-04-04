@@ -1,0 +1,122 @@
+.header{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d54c15;
+    padding: 1rem;
+
+}
+
+
+.header h1{
+    color: white;
+    font-size: small;
+}
+
+.rounder{
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    
+}
+
+form{
+    /* max-width: 500px; */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+input{
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #d54c15;
+    border-radius: 10%;
+}
+
+button{
+    margin: 1rem 0;
+    padding: .5rem;
+    width: 30%;
+    justify-self: center;
+    background-color: #d54c15;
+    color: white;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+       
+}
+
+.toggle-password{
+    margin: -30px;
+}
+
+
+.login{
+    text-align: center;
+}
+
+.profile_image img {
+    border-radius: 50%;
+    margin: 0 auto;
+width: 100px;
+height: 100px;
+}
+
+.edit-icon{
+    margin-left: -40px;
+    background-color: antiquewhite;
+    padding: 2%;
+    border: 1px solid #d54c15;
+    border-radius: 50%;
+}
+
+.edit-icon{
+    color: #d54c15;
+}
+
+.anchor a{
+    color: #d54c15;
+}
+@media screen and (min-width: 760px) {
+    button{ 
+        width:100%
+    }
+    .password-field{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+}
+
+#passwordRequirements {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#passwordRequirements p {
+    padding: 5px;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+  
+  

@@ -1,0 +1,35 @@
+{
+  "short_name": "Falcon App",
+  "name": "Falcon App - Maps and Virtual ID for Langara College",
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#F15A22",
+  "theme_color": "#F15A22",
+  "icons": [
+    {
+      "src": "assets/falcon-44x44.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/falcon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/falcon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/falcon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/falcon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

@@ -142,92 +142,92 @@
             .options-menu .button-label:hover .cls-16{
                 fill: #fbb69a;
             }
+            #floor{
+                cursor:grab;
+            }
+            #floor .room{
+                 cursor: pointer;
+            }
+            #floor .room polygon,#floor .room path, #floor .room rect{
+                fill: #c5c5c5 !important;
+            }
+            #floor .room:hover polygon, #floor .room:hover path, #floor .room:hover rect{
+                fill: #d54c15 !important;
+            }
+            #floor .room text, #floor .room tspan{
+                fill:rgb(25, 25, 25);
+            }
+            #floor .room:hover text, #floor .room:hover tspan{
+                fill:white;
+            }
 
-            #floor .cls-1 {
-                fill: #91744a;
+      
+            #floor g.greyscale polygon, #floor g.greyscale path, #floor g.greyscale rect{
+                fill: rgb(199, 199, 199) !important;
+                
+            }
+            #floor g.greyscale:hover polygon, #floor g.greyscale:hover path, #floor g.greyscale:hover rect{
+                fill: rgb(199, 199, 199)!important;
+                
+            }
+            #floor g.greyscale text, #floor g.greyscale tspan{
+                fill:grey;
+            }
+            #floor g.greyscale:hover text, #floor g.greyscale:hover tspan{
+                fill:grey;
             }
             
-            #floor .cls-1,
-            #floor .cls-2,
-            #floor .cls-3,
-            #floor .cls-4 {
-                stroke-width: 0px;
+            #floor g.active polygon, #floor g.active path, #floor g.active rect{
+                fill: orangered !important;
+                
             }
-            
-            #floor .cls-5 {
-                fill: #13120d;
-                font-size: 9.3px;
+            #floor g.active:hover polygon, #floor g.active:hover path, #floor g.active:hover rect{
+                fill: #d54c15 !important;
+                
             }
-            
-            #floor .cls-5,
-            #floor .cls-6,
-            #floor .cls-7 {
-                font-family: MyriadPro-Regular, 'Myriad Pro';
+            #floor g.active text, #floor g.active tspan{
+                fill:white;
             }
-            
-            #floor .cls-2 {
-                fill: #f6f6f6;
+            #floor g.active:hover text, #floor g.active:hover tspan{
+                fill:white;
             }
-            
-            #floor .cls-8,
-            #floor .cls-9,
-            #floor .cls-10 {
-                fill: none;
-                stroke: #3c3c3b;
+            .levelForm{
+                position: absolute;
+                right: 2px;
+                top: 0px;
+                z-index: 10;
+                font-size: 2rem;
+                text-transform: capitalize;
+                padding: 15px;
+                background-color: white;
             }
-            
-            #floor .cls-11 {
-                font-family: ArialMT, Arial;
-                font-size: 9.47px;
+            .select_floor{
+                padding: 20px;
+                font-size: 1.5rem;
+                border: 0;
+                background-color: orangered;
+                color: white;border-radius: 10px;
             }
-            
-            #floor .cls-11,
-            #floor .cls-12,
-            #floor .cls-6,
-            #floor .cls-13 {
-                fill: #fff;
+            .select_floor option{
+                background-color: white;
+                color: orangered;
+                border-radius: 10px;
+                padding: 1rem;
             }
-            
-            #floor .cls-12 {
-                font-family: Arial-BoldMT, Arial;
-                font-size: 12.87px;
-                font-weight: 700;
+            .select_floor:hover, .select_floor option:hover{
+            background-color: black;
             }
-            
-            #floor .cls-6,
-            #floor .cls-13 {
-                font-size: 9.3px;
+            .select_floor option:focus, .select_floor option:checked  { 
+                box-shadow: 0 0 10px 100px red inset !important;
+                
             }
-            
-            #floor .cls-14 {
-                letter-spacing: -.05em;
+            .select_floor:focus{
+                outline:white;
             }
-            
-            #floor .cls-3 {
-                fill: #c6c6c6;
+            .button-menu{
+                display: none;
             }
-            
-            #floor .cls-13,
-            #floor .cls-15 {
-                font-family: TheSansOsF-Light, 'TheSansOsF Light';
-                font-weight: 300;
-            }
-            
-            #floor .cls-9 {
-                stroke-dasharray: 0 0 8 8;
-                stroke-miterlimit: 5;
-            }
-            
-            #floor .cls-4 {
-                fill: #9d9d9c;
-            }
-            
-            #floor .cls-10 {
-                stroke-miterlimit: 10;
-            }
-            
-            #floor .cls-15,
-            #floor .cls-7 {
-                fill: #3c3c3b;
-                font-size: 9.14px;
+            .building_label, .buidling_link{
+                font-size: 1.5rem;
+                margin: 0;
             }

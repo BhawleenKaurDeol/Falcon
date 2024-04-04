@@ -3,20 +3,24 @@ ini_set('max_execution_time', '0');
 header('Content-Type: text/html; charset=UTF-8');
 header("Access-Control-Allow-Origin: *");
 include "includes/application_top.php";
+$page_title="Profile > Image"
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php 
+include "headers_scripts.php";
+?>
+
     <link rel="stylesheet" href="vendors/cropper.js/cropper.css">
     <script  src="vendors/cropper.js/cropper.js" defer></script>
     <script  src="javascript/image.js" defer></script>
     <!-- <script  src="javascript/webcam.js" defer></script> -->
     <title>Image Cropper</title>
-    <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="images/falcon-icon.png">
-    <link rel="stylesheet" href="css/styles.css">
+
+
     <link rel="stylesheet" href="css/image.css">
     <!-- <link rel="stylesheet" href="css/images.css"> -->
    
@@ -55,7 +59,7 @@ include "includes/application_top.php";
                 <img id="image-to-crop" src="images/placeholder-640x480.webp" class="crop-target" alt="Captured image will appear here...">
             </div>
         
-                <div class="crop button"><button id="btn-crop">Crop</button></div>
+                <div class="crop button"><button id="btn-crop"><i class="fa-solid fa-crop"></i> Crop</button></div>
                 <input type="file" id="file-input" accept="image/*" class="hide"  />
         </div>
         <div class="hide" id="image_result">
@@ -66,8 +70,8 @@ include "includes/application_top.php";
               <input type="hidden" name="action" value="1">
               <input type="hidden" id="picture" name="picture" value="">
               <div class="save-cancel">
-                <input type="submit" value="save" id="save">
-                <button id="cancel" >Cancel</button>
+                <button type="submit" id="save"><i class="fa-solid fa-floppy-disk"></i> Save </button>
+                <button id="cancel" ><i class="fa-solid fa-xmark"></i> Cancel</button>
             </div>
               </form>
         </div>

@@ -17,7 +17,7 @@ define('FULL_PATH', HTTPS_SERVER.ROOT_FOLDER);
   define('DIR_FS_CATALOG', 'c:/wamp64/www/falcon');
 
 
-// define our database connection
+//LOCAL CONNECTION
   define('DB_SERVER', 'localhost'); // eg, localhost - should not be empty for productive servers
   define('DB_SERVER_USERNAME', 'root');
   define('DB_SERVER_PASSWORD', '');

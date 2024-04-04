@@ -4,6 +4,7 @@ header('Content-Type: text/html; charset=UTF-8');
 header("Access-Control-Allow-Origin: *");
 include "includes/application_top.php";
 include "vendors/phpbarcode/php-barcode.php";
+$page_title='Virtual ID';
 ?>
 <?php
 if (isset($_SESSION['ID_USER'])) {
@@ -37,11 +38,11 @@ if (isset($_SESSION['ID_USER'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Falcon APP - HOME</title>
-    <script src="https://kit.fontawesome.com/6155c8fec8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <?php 
+include "headers_scripts.php";
+?>
     <link rel="stylesheet" href="css/student_id.css">
-    <link rel="icon" type="image/png" href="images/falcon-icon.png">
-    
+
 </head>
 <body class="falcon-body">
     <?php 
@@ -86,7 +87,8 @@ if (isset($_SESSION['ID_USER'])) {
         </svg>
         <svg id="id_reverse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 614.35 364.79">
           <rect  y="252.96" width="614.35" height="111.83" />
-          <image width="256" height="256" transform="translate(54.17 40) scale(.75)" xlink:href="vendors/phpqr/qrcode-display.php?data=<?=urlencode(FULL_PATH)?>student_id_view.php?q=<?=get_encoded_id($_SESSION['ID_USER'])?>&w=191&h=191&q=50" />
+          <image width="256" height="256" transform="translate(54.17 40) scale(.75)" xlink:href="vendors/phpqr/qrcode-display.php?data=<?php //urlencode(FULL_PATH); 
+          echo 'https://inteligencia.ec/falcon/'?>student_id_view.php?q=<?=get_encoded_id($_SESSION['ID_USER'])?>&w=191&h=191&q=50" />
           <image width="400" height="80" transform="translate(94.3 268.87)" xlink:href="vendors/phpbarcode/barcode-gd.php?code=<?= $type_user == 'Student' ? $student_id : $staff_id ?>" /><text class="cls-5" transform="translate(91.85 25)">
             <tspan class="cls-4" x="0" y="0">Verify virtual ID</tspan>
           </text>
